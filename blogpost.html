@@ -11,6 +11,25 @@
             <div id="post">
                 <h1>Este es el título atractivo e interesante del post</h1>
                 <p>Y este es el parrafo de inicio donde vamos a explicar las cosas increéibles que se pueden hacer con ramas</p>
+                <p>Es posible que Git te haya mostrado alguna vez una advertencia del tipo «You are in ‘detached HEAD’ state» al intentar hacer un commit o un push. Lo que nos está diciendo Git es que el puntero HEAD está apuntando directamente a un commit, en lugar de apuntar a una rama que apunte al commit.
+
+                    Para solucionarlo creamos una nueva rama temporal y hacemos que apunte al último commit haciendo un checkout de ella:
+                    
+                    git branch tmp
+                    git checkout tmp
+                    
+                    Movemos el puntero de la rama master al de nuestra nueva rama temporal:
+                    
+                    git branch -f master tmp
+                    git checkout master
+                    
+                    Borramos la rama temporal, que ya no es necesaria:
+                    
+                    git branch -d tmp
+                    
+                    Y ya podemos hacer el commit o el push tranquilamente:
+                    
+                    git push origin master</p>
             </div>
         </div>
     </body>
